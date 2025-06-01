@@ -16,9 +16,7 @@
         <button id="stopButton" disabled>Stop Camera</button>
         <button id="switchCameraButton" disabled>Switch Camera</button>
     </div>
-
-<p class="message">
-Please grant camera permission when prompted. This website requires a secure connection (HTTPS) to access your camera.</p>
+<p class="message">Please grant camera permission when prompted. This website requires a secure connection (HTTPS) to access your camera.</p>
 <script src="script.js"></script>
 </body>
 </html>
