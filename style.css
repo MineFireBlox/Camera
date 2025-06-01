@@ -1,0 +1,140 @@
+        /* Basic styling for the body */
+        body {
+            font-family: 'Inter', sans-serif; /* Using Inter font as per instructions */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Full viewport height */
+            margin: 0;
+            background-color: #f0f2f5; /* Light grey background */
+            color: #333;
+            padding: 20px; /* Add some padding around the content */
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+
+        /* Header styling */
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        /* Container for the video feed */
+        #cameraContainer {
+            position: relative;
+            width: 95vw; /* Take 95% of viewport width */
+            max-width: 720px; /* Max width for larger screens */
+            background-color: #000; /* Black background for video area */
+            border: 2px solid #555;
+            border-radius: 12px; /* Rounded corners for the container */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.25); /* Soft shadow */
+            overflow: hidden; /* Hide anything outside the video bounds */
+            margin-bottom: 30px;
+            aspect-ratio: 16 / 9; /* Maintain a common video aspect ratio */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Video element styling */
+        video {
+            display: block; /* Remove extra space below video */
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Fill the container, cropping if necessary */
+            border-radius: 10px; /* Slightly smaller rounded corners than container */
+        }
+
+        /* Controls button group */
+        .controls {
+            display: flex;
+            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+            gap: 15px; /* Space between buttons */
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        /* Button base styling */
+        button {
+            padding: 14px 28px;
+            font-size: 1.1em;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px; /* Rounded corners for buttons */
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        button:hover {
+            transform: translateY(-2px); /* Slight lift effect on hover */
+            box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+        }
+
+        button:active {
+            transform: translateY(0); /* Press effect */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        button:disabled {
+            background-color: #cccccc !important; /* Grey out disabled buttons */
+            color: #666666 !important;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+
+        /* Specific button colors */
+        #startButton {
+            background-color: #28a745; /* Green */
+            color: white;
+        }
+        #startButton:hover {
+            background-color: #218838;
+        }
+
+        #stopButton {
+            background-color: #dc3545; /* Red */
+            color: white;
+        }
+        #stopButton:hover {
+            background-color: #c82333;
+        }
+
+        #switchCameraButton {
+            background-color: #007bff; /* Blue */
+            color: white;
+        }
+        #switchCameraButton:hover {
+            background-color: #0069d9;
+        }
+
+        /* Message text styling */
+        .message {
+            margin-top: 15px;
+            color: #6c757d;
+            text-align: center;
+            font-size: 0.95em;
+            max-width: 80%;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 20px;
+            }
+            button {
+                padding: 12px 20px;
+                font-size: 1em;
+            }
+            .controls {
+                flex-direction: column; /* Stack buttons vertically on small screens */
+                gap: 10px;
+            }
+            #cameraContainer {
+                aspect-ratio: 4 / 3; /* More common mobile camera ratio */
+            }
+        }
